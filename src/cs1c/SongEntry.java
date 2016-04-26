@@ -1,4 +1,5 @@
-package cs1c;
+package src.cs1c;
+
 /**
  * One object of class SongEntry stores a simplified version of the genre data set from 
  * the Million Song Dataset.
@@ -29,6 +30,12 @@ public class SongEntry implements Comparable<SongEntry>
 		setDuration(duration);
 		this.artist = artist_name;
 		this.genre = genre;
+	}
+	
+	// adding constructor
+	public SongEntry(String title)
+	{
+	    this.title = title;
 	}
 
 	/**
@@ -86,7 +93,8 @@ public class SongEntry implements Comparable<SongEntry>
 	/**
 	 * we allow this to be defined by one field, not full identity - a choice
 	 */
-	public int compareTo(SongEntry other)
+	@Override
+    public int compareTo(SongEntry other)
 	{
 		switch (sortKey)
 		{
@@ -107,7 +115,8 @@ public class SongEntry implements Comparable<SongEntry>
 	 * string representation of the string in order of:
 	 * title, duration, artist, genre
 	 */
-	public String toString()
+	@Override
+    public String toString()
 	{
 		return    title + ", " 
 				+ TimeConverter.convertTimeToString(duration) + ", "

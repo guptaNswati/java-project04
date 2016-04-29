@@ -1,12 +1,11 @@
 package queues;
 
-import cs1c.MillionSongDataSubset;
-import cs1c.SongEntry;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
+
+import cs1c.MillionSongDataSubset;
+import cs1c.SongEntry;
 
 
 /**
@@ -14,7 +13,7 @@ import java.util.Scanner;
  * Enqueues and dequeues SongEntry objects from each playlist. 
  * Simulates playing each song and finally checks the state of each playlist.
  *  
- * @author Foothill College, [YOUR NAME HERE]
+ * @author Foothill College, [Swati]
  */
 public class MyTunes 
 {
@@ -113,10 +112,10 @@ public class MyTunes
 		final String DATAFILE = "resources/music_genre_subset.json"; // Directory path for JSON file
 		
 		// TODO: Tests Jukeboxs class by enqueu-ing songs in the different playlists.
-		//final String TESTFILE = "resources/tunes.txt";	// Directory path for plain-text file
+//		final String TESTFILE = "resources/tunes.txt";	// Directory path for plain-text file
 		
 		// NOTE: An example of testing the boundary condition when all playlists are empty
-		//final String TESTFILE = "resources/tunes_empty.txt";	
+//		final String TESTFILE = "resources/tunes_empty.txt";	
 		
 		// NOTE: An example of testing the boundary condition where we dequeue from empty playlist
 		final String TESTFILE = "resources/tunes_truncated.txt";	
@@ -196,7 +195,7 @@ public class MyTunes
         for (playListNumber = 0; playListNumber < namesOfPlayLists.length; playListNumber++)
         {
             Queue<SongEntry> queue = tunes.getPlayList(namesOfPlayLists[playListNumber]);
-            if(queue.peep() == null)
+            if(queue.peek() == null)
                 System.out.printf("Playlist \"%s\" has *no* songs remaining.\n", namesOfPlayLists[playListNumber]);
             else
                 System.out.printf("Playlist \"%s\" is %d song(s) remaining.\n", queue.getName(), queue.size());

@@ -1,4 +1,4 @@
-package src.cs1c;
+package cs1c;
 
 
 

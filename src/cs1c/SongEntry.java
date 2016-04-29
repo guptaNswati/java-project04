@@ -1,4 +1,4 @@
-package src.cs1c;
+package cs1c;
 
 /**
  * One object of class SongEntry stores a simplified version of the genre data set from 
@@ -24,7 +24,7 @@ public class SongEntry implements Comparable<SongEntry>
 	private String genre;
 
 	// default constructor
-	protected SongEntry(String title, int duration, String artist_name, String genre)
+	public SongEntry(String title, int duration, String artist_name, String genre)
 	{
 		this.title = title;
 		setDuration(duration);
@@ -32,12 +32,6 @@ public class SongEntry implements Comparable<SongEntry>
 		this.genre = genre;
 	}
 	
-	// adding constructor
-	public SongEntry(String title)
-	{
-	    this.title = title;
-	}
-
 	/**
 	 * accessor method returns the title of the song
 	 */

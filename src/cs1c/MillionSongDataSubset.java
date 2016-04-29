@@ -3,11 +3,13 @@ package cs1c;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Iterator;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
+import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
+import cs1c.SongEntry;
 
 
 /**
@@ -63,12 +65,16 @@ public class MillionSongDataSubset
 				arrayOfSongs[counter++] = currentSong;
 			}	
 		} // attempt to parse the input file
+		
 		catch (FileNotFoundException e) 
 		{	e.printStackTrace(); } 
 		catch (IOException e) 
 		{	e.printStackTrace(); } 
-		catch (ParseException e) 
-		{	e.printStackTrace(); }
+		catch (org.json.simple.parser.ParseException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
 
 	}
 
